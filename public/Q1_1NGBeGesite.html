@@ -10,8 +10,33 @@
     <label for="age">Enter your number of snacks:</label>
     <input type="text" id="NumPerDay" name="age"><br><br>
 
-    <p> Result: </p>
-    <button type="button">Accept Input</button>
+    <p id="result"> Result: </p>
+    <button type="button" onclick="getData()"> Accept Input </button>
+<script>
+  function getData(){
+    let AGE = document.getElementById("age").value;
+    let maxAGE = document.getElementById("maxAge").value;
+    let perDay = document.getElementById("NumPerDay").value;
+    let sure = window.confirm("are u super duper sure?");
+
+    //let AGE = age.value;
+    //let maxAGE = maxAge.value;
+    //let perday = NumPerDay.value;
+    //let sure = window.confirm("are u super duper sure?");
+
+    if (sure) {
+      let totalRequired = (Number(perDay) * 365) * (Number(maxAGE) - Number(AGE));
+      document.getElementById("result").innerHTML = "Result: You will need " + totalRequired + " to last you until the ripe old age of " + maxAGE;
+    } else {
+      window.alert("Run the code again.");
+    }
+  }
+</script>
+
+
+
+
+
 
 
 
@@ -35,6 +60,6 @@
 //}
 //else {
     //console.log("Run the code again.");
-}
+// }
 </script>
 </body>
