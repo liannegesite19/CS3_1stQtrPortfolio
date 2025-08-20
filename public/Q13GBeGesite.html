@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+   <h2> Q1 3rd Graded Exercise submitted by Lianne Gesite name of 9Beryllium</h2>
+
+   <p>Guess the number: ****</p>
+   <p>The number is from 1 to 100</p>
+
+    <label for="guess">Enter your guess: </label>
+    <input type="number" id="guess"><br><br>
+
+    
+    <button type="button" onclick="checkIt()"> Check It </button>
+    <p id="result"> Result: </p>
+
+    <script>
+
+       var dNumber = Math.floor(Math.random() * 100) + 1; // generates a number from 1  to 100 when the page loads
+
+        function checkIt() {
+         let GUESS = document.getElementById("guess").value;
+
+            if (GUESS < dNumber) {
+                document.getElementById("result").innerHTML = "Result: Higher"
+
+            } else if (GUESS == dNumber) {
+                document.getElementById("result").innerHTML = "Result: You are correct!"
+
+            } else {
+                document.getElementById("result").innerHTML = "Result: Lower"
+            }
+        }
+    </script>
+
+</body>
+
+</html>
